@@ -1,0 +1,44 @@
+:root {
+    --book-width: 200px;
+    --book-height: calc(var(--book-width) * 1.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 0;
+    /* border: 1px black solid; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    /* width: 500px; */
+}
+
+.bordered {
+    border: 1px black solid;
+}
+
+.book-shelf {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.book-element {
+    height: var(--book-height);
+    width: var(--book-width);
+}
+
+.title-div, .author-div, h1 {
+    text-align: center;
+}
+
+.title-div {
+    flex: auto;
+}
+
