@@ -81,7 +81,7 @@ label {
     justify-content: center;
 
     background-image: url('./bookshelf.jpg');
-    padding: 30px;
+    padding: 10px;
 }
 
 .book-element {
@@ -89,7 +89,7 @@ label {
     width: var(--book-width);
     padding: 10px;
     margin: 20px;
-    margin-bottom: 35px;
+    margin-top: 38px;
 
     display: flex;
     flex-direction: column;
