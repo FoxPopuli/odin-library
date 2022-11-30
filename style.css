@@ -1,13 +1,16 @@
+/* General */
 :root {
-    --book-width: 200px;
+    --book-width: 130px;
     --book-height: calc(var(--book-width) * 1.5);
+    --title-font: Arial, Helvetica, sans-serif;
+    --bg-dark-grey: #EAEDF0;
+    --bg-light-grey: #F6F7F8;
 }
 
 * {
     box-sizing: border-box;
-    margin: 5px;
+    margin: 0;
     padding: 0;
-    /* border: 1px black solid; */
 }
 
 body {
@@ -15,30 +18,86 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 50px;
-    /* width: 500px; */
 }
 
+
+/* Augmentations */
 .bordered {
     border: 1px black solid;
 }
 
+.invis {
+    display: none;
+}
+
+.shadowed {
+    box-shadow: 8px 5px 5px black;
+}
+
+/* Text Elements */
+
+.title-div, .author-div, h1 {
+    text-align: center;
+    font-family: var(--title-font);
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* Form Elements */
+button {
+    padding: 5px;
+    margin: 10px;
+}
+
+.title-div {
+    flex: auto;
+    font-size: 20px;
+}
+
+.author-div {
+    font-size: 12px;
+    font-style: italic;
+}
+
+.field {
+    justify-content: space-around;
+    width: 400px;
+}
+
+label {
+    margin-right: auto;
+}
+
+/* Content Elements */
 .book-shelf {
     display: flex;
-    width: 100%;
+    width: 800px;
+    height: 100%;
     flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    background-image: url('./bookshelf.jpg');
+    padding: 30px;
 }
 
 .book-element {
     height: var(--book-height);
     width: var(--book-width);
+    padding: 10px;
+    margin: 20px;
+    margin-bottom: 35px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: white;
 }
 
-.title-div, .author-div, h1 {
-    text-align: center;
-}
 
-.title-div {
-    flex: auto;
-}
+
+
 

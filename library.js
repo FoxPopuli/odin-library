@@ -1,14 +1,8 @@
+// Globals
 const bookShelf = document.querySelector('.book-shelf');
-bookShelf.classList.toggle('bordered');
+const formDiv = document.querySelector('.form-div');
+const showFormButton = document.querySelector('.show-form');
 
-const myLib = [];
-
-// class BookElement {
-//     constructor (title, author) {
-//         this.title = title 
-//         this.author = author
-//     }
-// }
 
 const library = {
     books: [],
@@ -17,6 +11,12 @@ const library = {
         this.books.push(
             new Book ({title, author})
         )
+    },
+
+    render() {
+        this.books.forEach (book => {
+            bookShelf.appendChild(book.element)
+        })
     }
 }
 
@@ -26,8 +26,7 @@ class Book {
         this.author = author;
 
         this.element = document.createElement('div');
-        this.element.classList.toggle('book-element');
-        this.element.classList.toggle('bordered');
+        this.element.classList.add('book-element', 'bordered', 'shadowed')
 
 
         if (!this.cover) {
@@ -59,11 +58,36 @@ library.addBook(
     'Patrick Rothfuss'
 )
 
+// Events
+document.querySelector('.submit-book').addEventListener('click', (e) => {
 
-function renderLib () {
-    library.books.forEach (book => {
-        bookShelf.appendChild(book.element)
-    })
-}
+    e.preventDefault();
+    let newTitle = document.querySelector('#title').value;
+    let newAuthor = document.querySelector('#author').value;
+    library.addBook(newTitle, newAuthor);
+    library.render();
 
-renderLib()
+    showFormButton.classList.toggle('invis');
+
+    formDiv.classList.toggle('invis');
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+})
+
+
+document.querySelector('.show-form').addEventListener('click', () => {
+    formDiv.classList.toggle('invis');
+    showFormButton.classList.toggle('invis');
+    console.log(formDiv)
+})
+
+document.querySelector('.hide-form').addEventListener('click', (e) => {
+    e.preventDefault();
+    formDiv.classList.toggle('invis');
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
+    showFormButton.classList.toggle('invis');
+})
+
+// Render
+library.render();
