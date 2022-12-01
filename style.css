@@ -18,12 +18,13 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--bg-light-grey);
 }
 
 
 /* Augmentations */
 .bordered {
-    border: 1px black solid;
+    border: 1px grey solid;
 }
 
 .invis {
@@ -34,7 +35,17 @@ body {
     box-shadow: 8px 5px 5px black;
 }
 
+.rounded {
+    border-radius: 3px;
+    border: 1px grey solid;
+}
+
+
 /* Text Elements */
+
+h1, h2, h3 {
+    text-align: center;
+}
 
 .title-div, .author-div, h1 {
     text-align: center;
@@ -45,7 +56,17 @@ h1 {
     margin-top: 20px;
 }
 
+
+
 /* Form Elements */
+form {
+    background-color: var(--bg-dark-grey);
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    padding: 10px;
+}
+
 button {
     padding: 5px;
     margin: 10px;
@@ -61,13 +82,36 @@ button {
     font-style: italic;
 }
 
-.field {
-    justify-content: space-around;
-    width: 400px;
+.text-field {
+    justify-content: space-between;
+    width: 250px;
+    display: flex;
+    margin: 5px;
 }
 
-label {
-    margin-right: auto;
+input {
+    padding: 3px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+input[type="checkbox"] {
+    align-self: right;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+form h2 {
+    /* margin: 5px; */
+    padding: 5px;
+}
+
+.error {
+    text-align: center;
+    color: red;
 }
 
 /* Content Elements */
@@ -75,6 +119,7 @@ label {
     display: flex;
     width: 800px;
     height: 100%;
+    min-height: 275px;
     flex-direction: row;
     flex-wrap: wrap;
 
